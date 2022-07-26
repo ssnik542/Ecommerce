@@ -1,0 +1,13 @@
+.containerProd {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  width: 90%;
+  height: 60%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px #2d313533;
+}
+.desc {
+  font-size: 18px;
+}
