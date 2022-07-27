@@ -3,23 +3,44 @@ const INIT_STATE = {
 };
 
 const handleCart = (state = INIT_STATE, action) => {
-  const product = action.payload;
   switch (action.type) {
     case "ADDITEM":
-      // const exist = state.carts.find((x) => x.id === product.id);
-      // if (exist) {
-      //   return state.map((x) =>
-      //     x.id === product.id ? { ...x, qty: x.qty + 1 } : x
-      //   );
-      // } else {
-      //   const product = action.product;
-      //   return [...state, { ...product, qty: 1 }];
-      // }
+      const ItemIndex = state.carts.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (ItemIndex >= 0) {
+        state.carts[ItemIndex].qty += 1;
+      } else {
+        const temp = { ...action.payload, qty: 1 };
+        return {
+          ...state,
+          carts: [...state.carts, temp]
+        };
+      }
+
+    case "DELITEM":
+      const data = state.carts.filter((el) => el.id !== action.payload);
       return {
         ...state,
-        carts: [...state.carts, action.payload]
+        carts: data
       };
-
+    case "DELINDV":
+      const ItemIndex_dec = state.carts.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (state.carts[ItemIndex_dec].qty >= 1) {
+        const deltItem = (state.carts[ItemIndex_dec].qty -= 1);
+        return {
+          ...state,
+          carts: [...state.carts]
+        };
+      } else if (state.carts[ItemIndex_dec].qty === 1) {
+        const data = state.carts.filter((el) => el.id !== action.payload);
+        return {
+          ...state,
+          carts: data
+        };
+      }
     default:
       return state;
   }

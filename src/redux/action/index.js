@@ -1,13 +1,20 @@
 export const addCart = (product) => {
   return {
     type: "ADDITEM",
-    payload: product,
+    payload: product
   };
 };
 
-export const delCart = (product) => {
+export const delCart = (id) => {
   return {
     type: "DELITEM",
-    payload: product,
+    payload: id
+  };
+};
+
+export const delIndv = (item) => {
+  return {
+    type: "DELINDV",
+    payload: item
   };
 };

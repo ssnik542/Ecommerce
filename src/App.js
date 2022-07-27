@@ -9,7 +9,7 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import Login from "./Login";
 import Signup from "./Signup";
-
+import BillingAddress from "./components/BillingAddress";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
@@ -36,6 +36,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/billing" element={<BillingAddress />} />
         <Route path="/products/:id" element={<Product />} />
       </Routes>
       <Routes>
