@@ -41,6 +41,10 @@ const handleCart = (state = INIT_STATE, action) => {
           carts: data
         };
       }
+    case "KHALI":
+      return {
+        carts: []
+      };
     default:
       return state;
   }

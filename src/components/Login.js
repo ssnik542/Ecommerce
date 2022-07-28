@@ -31,13 +31,14 @@ function Login() {
     setLoading(false);
   }
   const box = {
-    background: "white",
+    background: `url("https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149005675.jpg?w=996&t=st=1659023482~exp=1659024082~hmac=fa879d829aff0c76c7c4c32ffa88a7f5dcca23e93cc10c4329c9330dfd82b6b8")`,
     width: "400px",
     height: "300px",
     borderRadius: "6px",
     margin: "0 auto 0 auto",
     padding: "10px 10px 70px 10px",
-    border: "#2980b9 4px solid",
+    border: "#c2dbf0 1px solid",
+    boxShadow: "10px 10px #c2dbf0",
     marginTop: "10%"
   };
   const email = {
@@ -46,7 +47,7 @@ function Login() {
     borderBottom: "#ccc 2px solid",
     padding: "8px",
     width: "300px",
-    color: "#AAAAAA",
+    color: "#333",
     marginTop: "10px",
     fontSize: "1em",
     borderRadius: "4px",

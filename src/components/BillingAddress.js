@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./billingstyle.css";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { khaliCart } from "../redux/action";
+import { useDispatch } from "react-redux";
 function BillingAddress() {
   const state = useSelector((state) => state.handleCart.carts);
 
@@ -15,6 +17,11 @@ function BillingAddress() {
   useEffect(() => {
     prod_Ki_price();
   }, [total, state]);
+  const dispatch = useDispatch();
+  const khalikaro = () => {
+    dispatch(khaliCart());
+    console.log("khali");
+  };
   return (
     <div className="jadu">
       <div class="iphone">
@@ -104,7 +111,11 @@ function BillingAddress() {
 
           <div>
             <NavLink to="/orderplaced">
-              <button class="button button--full" type="submit">
+              <button
+                class="button button--full"
+                type="submit"
+                onClick={khalikaro}
+              >
                 <svg class="icon">
                   <use xlinkHref="#icon-shopping-bag" />
                 </svg>

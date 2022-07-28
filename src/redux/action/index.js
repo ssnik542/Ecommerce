@@ -18,3 +18,9 @@ export const delIndv = (item) => {
     payload: item
   };
 };
+
+export const khaliCart = () => {
+  return {
+    type: "KHALI"
+  };
+};
