@@ -69,6 +69,14 @@ function Login() {
     color: "#525252",
     marginLeft: "38%"
   };
+  const but = {
+    marginLeft: "37%",
+    padding: "10px 30px",
+    outline: "none",
+    backgroundColor: "#383734",
+    border: "none",
+    borderRadius: "5px"
+  };
   return (
     <>
       <div style={box}>
@@ -102,19 +110,13 @@ function Login() {
                 />
               </div>
               {!loading && (
-                <button class="button login__submit" disabled={loading}>
-                  <span class="button__text">Log In Now</span>
-                  <i class="button__icon">
-                    <FontAwesomeIcon icon={faChevronCircleRight} />
-                  </i>
+                <button class="login__submit" style={but} disabled={loading}>
+                  <span style={{ color: "#fff" }}>Log In </span>
                 </button>
               )}
               {loading && (
-                <button className="button login__submit" disabled>
-                  <span className="button__text">Loading...</span>
-                  <i className="button__icon">
-                    <FontAwesomeIcon icon={faChevronCircleRight} />
-                  </i>
+                <button className="login__submit" style={but} disabled>
+                  <span style={{ color: "#fff" }}>Loading...</span>
                 </button>
               )}
             </form>

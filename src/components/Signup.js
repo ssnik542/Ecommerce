@@ -74,6 +74,15 @@ function Signup() {
     color: "#525252",
     marginLeft: "35%"
   };
+  const but = {
+    marginLeft: "35%",
+    marginTop: "20px",
+    padding: "10px 30px",
+    outline: "none",
+    backgroundColor: "#383734",
+    border: "none",
+    borderRadius: "5px"
+  };
   return (
     <>
       <div style={box}>
@@ -119,19 +128,13 @@ function Signup() {
                 />
               </div>
               {!loading && (
-                <button class="button login__submit" disabled={loading}>
-                  <span class="button__text">Sign In Now</span>
-                  <i class="button__icon">
-                    <FontAwesomeIcon icon={faChevronCircleRight} />
-                  </i>
+                <button class="login__submit" style={but} disabled={loading}>
+                  <span style={{ color: "#fff" }}>Sign In</span>
                 </button>
               )}
               {loading && (
-                <button className="button login__submit" disabled>
-                  <span className="button__text">Loading...</span>
-                  <i className="button__icon">
-                    <FontAwesomeIcon icon={faChevronCircleRight} />
-                  </i>
+                <button className="login__submit" style={but} disabled>
+                  <span style={{ color: "#fff" }}>Loading...</span>
                 </button>
               )}
             </form>
