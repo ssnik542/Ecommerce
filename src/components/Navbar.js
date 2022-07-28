@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import logo from "../shop.png";
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useAuth } from "./AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,13 +24,13 @@ function Navbar() {
   const name = email.substring(0, email.indexOf("@"));
   const state = useSelector((state) => state.handleCart.carts);
   const main_head = {
-    backgroundColor: "#fff",
+    backgroundColor: "#f4f0f7",
     color: "ffff",
     zIndex: 1
   };
   const navbar = {
     minHeight: "10vh",
-    padding: "2rem",
+    padding: "1rem",
     display: "flex",
     alignItem: "center",
     width: "90%",
@@ -51,7 +50,18 @@ function Navbar() {
     fontWeight: "400"
   };
   const user = {
-    display: "flex"
+    display: "flex",
+    flexDirection: "column",
+    alignItem: "center",
+    justifyContent: "space-around"
+  };
+  const but = {
+    padding: "5px 20px",
+    outline: "none",
+    backgroundColor: "#27ae60",
+    border: "none",
+    borderRadius: "5px",
+    boxShadow: "0 9px #95a5a6"
   };
   return (
     <>
@@ -90,9 +100,13 @@ function Navbar() {
                   icon={faUser}
                   style={{ marginRight: "30px" }}
                 />
-                <p>{name}</p>
+                <p style={{ marginBottom: "5px" }}>{name}</p>
               </div>
-              <button onClick={handleLogout}>Log Out</button>
+            </li>
+            <li>
+              <button onClick={handleLogout} style={but}>
+                Log Out
+              </button>
             </li>
           </ul>
         </nav>

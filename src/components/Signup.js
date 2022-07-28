@@ -8,7 +8,6 @@ import {
   faLock,
   faChevronCircleRight
 } from "@fortawesome/free-solid-svg-icons";
-import "./Login.css";
 function Signup() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -36,10 +35,48 @@ function Signup() {
 
     setLoading(false);
   }
-
+  const box = {
+    background: "white",
+    width: "400px",
+    height: "400px",
+    borderRadius: "6px",
+    margin: "0 auto 0 auto",
+    padding: "10px 10px 70px 10px",
+    border: "#2980b9 4px solid",
+    marginTop: "10%"
+  };
+  const email = {
+    background: "#ecf0f1",
+    border: "#ccc 1px solid",
+    borderBottom: "#ccc 2px solid",
+    padding: "8px",
+    width: "300px",
+    color: "#AAAAAA",
+    marginTop: "10px",
+    fontSize: "1em",
+    borderRadius: "4px",
+    marginLeft: "30px"
+  };
+  const pass = {
+    borderRadius: "4px",
+    background: "#ecf0f1",
+    border: "#ccc 1px solid",
+    padding: "8px",
+    width: "300px",
+    fontSize: "1em",
+    marginLeft: "30px",
+    marginTop: "30px"
+    // marginBottom: "20px"
+  };
+  const sh = {
+    fontSize: "1.5em",
+    color: "#525252",
+    marginLeft: "35%"
+  };
   return (
     <>
-      <div class="container">
+      <div style={box}>
+        <h1 style={sh}>Shopee 🥑</h1>
         <div class="screen">
           <div class="screen__content">
             {error && <Alert variant="danger">{error}</Alert>}
@@ -50,7 +87,7 @@ function Signup() {
                 </i>
                 <input
                   type="email"
-                  class="login__input"
+                  style={email}
                   placeholder="Email"
                   ref={emailRef}
                   required
@@ -62,7 +99,7 @@ function Signup() {
                 </i>
                 <input
                   type="password"
-                  class="login__input"
+                  style={pass}
                   placeholder="Password"
                   ref={passwordRef}
                   required
@@ -74,7 +111,7 @@ function Signup() {
                 </i>
                 <input
                   type="password"
-                  class="login__input"
+                  style={pass}
                   placeholder="Confirm Password"
                   ref={passwordConfirmRef}
                   required

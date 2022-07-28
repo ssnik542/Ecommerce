@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import EkorNav from "./EkorNav";
 import Skeleton from "react-loading-skeleton";
-import Navbar from "./Navbar";
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -120,8 +120,8 @@ function Products() {
 
   return (
     <>
-      <Navbar />
       <div>
+        <EkorNav />
         <div className="container my-5 py-5">
           <div className="row">
             <div className="col-12 mb-5">
