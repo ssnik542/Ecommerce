@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
+import Navbar from "./Navbar";
 import "./StyleProduct.css";
 function Product() {
   const { id } = useParams();

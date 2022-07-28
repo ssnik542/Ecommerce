@@ -103,7 +103,7 @@ tfoot {
 .card {
   border-radius: 1em;
   background-color: var(--color-primary);
-  color: #fff;
+  color: #333;
   padding: 1em;
 }
 
@@ -168,4 +168,26 @@ tfoot {
   min-block-size: 100vh;
   padding: 5vmin;
   place-items: center;
+}
+.dabba {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  text-decoration: none;
+}
+.dabba button {
+  color: black;
+  width: 100px;
+  height: 50px;
+  background-color: #e96363;
+}
+.dabba button:hover {
+  background-color: #eb8989;
+}
+.dabba h1 {
+  font-size: 40px;
+}
+.dabba img {
+  margin-top: 80px;
 }

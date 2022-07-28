@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./billingstyle.css";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 function BillingAddress() {
-  const dispatch = useDispatch();
   const state = useSelector((state) => state.handleCart.carts);
 
   const [total, setTotal] = useState(0);
@@ -104,12 +103,14 @@ function BillingAddress() {
           </div>
 
           <div>
-            <button class="button button--full" type="submit">
-              <svg class="icon">
-                <use xlinkHref="#icon-shopping-bag" />
-              </svg>
-              Buy Now
-            </button>
+            <NavLink to="/orderplaced">
+              <button class="button button--full" type="submit">
+                <svg class="icon">
+                  <use xlinkHref="#icon-shopping-bag" />
+                </svg>
+                Buy Now
+              </button>
+            </NavLink>
           </div>
         </form>
       </div>

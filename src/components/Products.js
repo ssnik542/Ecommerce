@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
+import Navbar from "./Navbar";
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+
   let componentMounted = true;
 
   useEffect(() => {
@@ -117,19 +119,24 @@ function Products() {
   };
 
   return (
-    <div>
-      <div className="container my-5 py-5">
-        <div className="row">
-          <div className="col-12 mb-5">
-            <h1 className="display-6 fw-bolder text-center">Latest Products</h1>
-            <hr />
+    <>
+      <Navbar />
+      <div>
+        <div className="container my-5 py-5">
+          <div className="row">
+            <div className="col-12 mb-5">
+              <h1 className="display-6 fw-bolder text-center">
+                Latest Products
+              </h1>
+              <hr />
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            {loading ? <Loading /> : <ShowProducts />}
           </div>
         </div>
-        <div className="row justify-content-center">
-          {loading ? <Loading /> : <ShowProducts />}
-        </div>
       </div>
-    </div>
+    </>
   );
 }
 
